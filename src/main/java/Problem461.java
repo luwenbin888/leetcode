@@ -19,6 +19,11 @@
 public class Problem461 {
 
     public int hammingDistance(int x, int y) {
+        int hammingDistance = method2(x, y);
+        return hammingDistance;
+    }
+
+    private int method1(int x, int y) {
         int hammingDist = 0;
         while (x > 0 || y > 0) {
             int digitX = x & 1;
@@ -26,6 +31,17 @@ public class Problem461 {
             if ((digitX ^ digitY) == 1) hammingDist++;
             x = x >> 1;
             y = y >> 1;
+        }
+
+        return hammingDist;
+    }
+
+    private int method2(int x, int y) {
+        int xor = x ^ y;
+        int hammingDist = 0;
+        while (xor > 0) {
+            hammingDist += (xor & 1);
+            xor >>= 1;
         }
 
         return hammingDist;
