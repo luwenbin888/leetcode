@@ -2,4 +2,3 @@ src/
 target/
 !/src/
 /.idea/
-/.idea/workspace.xml
