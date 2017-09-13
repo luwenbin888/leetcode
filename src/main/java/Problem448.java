@@ -59,6 +59,32 @@ public class Problem448 {
         return result;
     }
 
+    private List<Integer> method3(int[] nums) {
+        List<Integer> result = new LinkedList<>();
+
+        int i = 0;
+        while (i < nums.length) {
+            int j = i;
+            while (nums[j] > 0) {
+                int val = nums[j];
+                if (nums[val - 1] > 0) {
+                    nums[j] = nums[val - 1];
+                    nums[val - 1] = -1;
+                }
+                else {
+                    break;
+                }
+            }
+            i++;
+        }
+
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] > 0) result.add(j + 1);
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
         Problem448 problem448 = new Problem448();
         int[] nums = {4,3,2,7,8,2,3,1};
