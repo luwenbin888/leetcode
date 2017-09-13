@@ -1,3 +1,5 @@
+package easy;
+
 import utils.TreeNode;
 
 import java.util.ArrayList;
