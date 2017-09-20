@@ -1,5 +1,3 @@
-package easy;
-
 import utils.TreeNode;
 
 /**
