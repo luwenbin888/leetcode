@@ -21,7 +21,7 @@ public class Problem326 {
 
     private boolean method2(int n) {
         String base3 = Integer.toString(n, 3);
-        return base3.matches("^10*");
+        return base3.matches("^10*$");
     }
 
     public static void main(String[] args) {
