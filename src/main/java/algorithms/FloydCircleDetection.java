@@ -46,6 +46,8 @@ public class FloydCircleDetection {
             fast = fast.next;
         }
 
+        if (fast == null) return 0;
+
         // anchor slow, move fast one pointer at a time until they meet
         fast = fast.next;
         length++;
@@ -74,6 +76,8 @@ public class FloydCircleDetection {
             slow = slow.next;
             fast = fast.next;
         }
+
+        if (fast == null) return null;
 
         while (head != slow) {
             head = head.next;
@@ -107,6 +111,6 @@ public class FloydCircleDetection {
         System.out.println(length);
 
         ListNode startNode = solution.detectCircleStart(a);
-        System.out.println(startNode.val);
+        System.out.println(startNode == null ?  "":startNode.val);
     }
 }
