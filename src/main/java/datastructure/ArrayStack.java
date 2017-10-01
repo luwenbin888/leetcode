@@ -1,26 +1,32 @@
 package datastructure;
 
+import java.util.ArrayList;
+
 /**
  * Stack implemented by Array
  */
 public class ArrayStack<T> implements Stack<T>{
+    ArrayList<T> data = new ArrayList<>();
+
     @Override
-    public int size() {
-        return 0;
+    public synchronized int size() {
+        return data.size();
     }
 
     @Override
-    public boolean push(T item) {
-        return false;
+    public synchronized boolean push(T item) {
+        return data.add(item);
     }
 
     @Override
-    public T pop() {
-        return null;
+    public synchronized T pop() {
+        T item = data.get(data.size() - 1);
+        data.remove(data.size() - 1);
+        return item;
     }
 
     @Override
-    public boolean empty() {
-        return false;
+    public synchronized boolean empty() {
+        return data.isEmpty();
     }
 }
